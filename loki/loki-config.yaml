@@ -1,11 +1,9 @@
-# loki/loki-config.yaml (نسخه نهایی، صحیح و مدرن)
 auth_enabled: false
 
 server:
   http_listen_port: 3100
   grpc_listen_port: 9096
 
-# این بلاک 'common' جایگزین بسیاری از تنظیمات پیچیده قبلی شده است
 common:
   instance_addr: 127.0.0.1
   path_prefix: /loki
@@ -18,7 +16,6 @@ common:
     kvstore:
       store: inmemory
 
-# این بلاک برای استفاده از ایندکس TSDB اصلاح شده است
 schema_config:
   configs:
     - from: "2024-04-01"
@@ -29,7 +26,6 @@ schema_config:
         prefix: index_
         period: 24h
 
-# این دو بلاک اختیاری هستند اما برای عملکرد کامل بهتر است باشند
 ingester:
   lifecycler:
     final_sleep: 0s
